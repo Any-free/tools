@@ -1,0 +1,81 @@
+.popup-container.hide {
+  pointer-events: none;
+
+  .popup-wrapper-top {
+    transform: translateY(-100%);
+  }
+
+  .popup-wrapper-bottom {
+    transform: translateY(100%);
+  }
+
+  .popup-wrapper-left {
+    transform: translateX(-100%);
+  }
+
+  .popup-wrapper-right {
+    transform: translateX(100%);
+  }
+  .popup-wrapper-center {
+    // 居中
+  }
+
+  .popup-mask {
+    opacity: 0;
+  }
+}
+
+.popup-container-animation-off {
+  .popup-mask {
+    transition-duration: 1ms;
+  }
+  .popup-wrapper {
+    transition-duration: 1ms;
+  }
+}
+
+.popup-mask {
+  background-color: rgba(0, 0, 0, .75);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.15s linear;
+
+  &-off {
+    display: none;
+    // background-color: transparent;
+    // transition: initial;
+  }
+}
+
+.popup-wrapper {
+  position: fixed;
+  
+  background-color: white;
+  transition: transform 0.15s linear;
+
+  &-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-top, &-bottom {
+    left: 0;
+    width: 100%;
+  }
+
+  &-left, &-right {
+    height: 100%;
+    top: 0;
+  }
+  &-left {
+    left: 0;
+  }
+  &-right {
+    right: 0;
+  }
+}
